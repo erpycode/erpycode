@@ -3,7 +3,9 @@
 🐍 Python learner  
 ⚡ Building one commit at a time  
 🧠 Learning to think like a developer  
-💻 Turning ideas into code  
+💻 Turning ideas into code
+
+### 🌐 [**Portfolio →**](https://erpycode.github.io/erpycode/)
 
 ---
 
