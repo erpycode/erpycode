@@ -47,15 +47,15 @@ My goal is simple: become a strong developer by building real things.
 
 | # | Project | Description | Stars | Tech |
 |---|---------|-------------|:-----:|------|
-| 1 | [**cloudflare-request-calc**](https://github.com/erpycode/cloudflare-request-calc) | ⚡ Fast, lightweight Cloudflare traffic calculator — Convert GB ↔ Requests instantly with glassmorphism UI | ⭐ 8 | HTML, CSS, JS |
-| 2 | [**Password_Generator**](https://github.com/erpycode/Password_Generator) | 🔐 Secure Python password generator with clipboard copy and file save | ⭐ 2 | Python |
-| 3 | [**StyleFlow-Barbershop**](https://github.com/erpycode/StyleFlow-Barbershop) | 💇 Full-stack barbershop appointment app with AI assistant and bilingual support | ⭐ 2 | React, Vite, Gemini AI, Tailwind |
-| 4 | [**nahan**](https://github.com/erpycode/nahan) | 🌐 Secure network gateway on Cloudflare Workers | ⭐ 1 | Cloudflare Workers |
-| 5 | [**ip-extractor**](https://github.com/erpycode/ip-extractor) | 🔍 Extract, clean, filter IP addresses from scanner outputs in browser | ⭐ 1 | HTML, JS |
-| 6 | [**sort-exported-projects**](https://github.com/erpycode/sort-exported-projects) | 📁 Auto-organize exported video projects into Exported folder | ⭐ 1 | Python |
-| 7 | [**file_orgenizer**](https://github.com/erpycode/file_orgenizer) | 📂 Auto-organize files into categorized folders with dry mode | ⭐ 0 | Python |
-| 8 | [**phone_book**](https://github.com/erpycode/phone_book) | 📱 Terminal-based phone book manager with JSON persistence | ⭐ 0 | Python |
-| 9 | [**nahan-installer**](https://github.com/erpycode/nahan-installer) | 🛠️ Installer for Nahan gateway | ⭐ 0 | Shell |
+| 1 | [**nahan-installer**](https://github.com/erpycode/nahan-installer) | 🛠️ Automated Nahan gateway installer for Cloudflare Workers | ⭐ 14 | Shell |
+| 2 | [**cloudflare-request-calc**](https://github.com/erpycode/cloudflare-request-calc) | ⚡ Fast, lightweight Cloudflare traffic calculator — Convert GB ↔ Requests instantly with glassmorphism UI | ⭐ 8 | HTML, CSS, JS |
+| 3 | [**Password_Generator**](https://github.com/erpycode/Password_Generator) | 🔐 Secure Python password generator with clipboard copy and file save | ⭐ 2 | Python |
+| 4 | [**StyleFlow-Barbershop**](https://github.com/erpycode/StyleFlow-Barbershop) | 💇 Full-stack barbershop appointment app with AI assistant and bilingual support | ⭐ 2 | React, Vite, Gemini AI, Tailwind |
+| 5 | [**nahan**](https://github.com/erpycode/nahan) | 🌐 Secure network gateway on Cloudflare Workers | ⭐ 1 | Cloudflare Workers |
+| 6 | [**ip-extractor**](https://github.com/erpycode/ip-extractor) | 🔍 Extract, clean, filter IP addresses from scanner outputs in browser | ⭐ 1 | HTML, JS |
+| 7 | [**sort-exported-projects**](https://github.com/erpycode/sort-exported-projects) | 📁 Auto-organize exported video projects into Exported folder | ⭐ 1 | Python |
+| 8 | [**file_orgenizer**](https://github.com/erpycode/file_orgenizer) | 📂 Auto-organize files into categorized folders with dry mode | ⭐ 0 | Python |
+| 9 | [**phone_book**](https://github.com/erpycode/phone_book) | 📱 Terminal-based phone book manager with JSON persistence | ⭐ 0 | Python |
 | 10 | [**gittutorial**](https://github.com/erpycode/gittutorial) | 📚 Git tutorial and notes | ⭐ 0 | Git |
 
 ---
