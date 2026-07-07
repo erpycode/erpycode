@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ErPyCode | live in the codes</title>
+  <meta name="description" content="پورتفولیو عرفان عارف: توسعه‌دهنده پایتون، متخصص خودکارسازی و وب‌اپلیکیشن‌های هوشمند." />
+  <meta name="author" content="Erfan Aref (ErPyCode)" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ErPyCode | Portfolio" />
+  <meta property="og:description" content="توسعه‌دهنده پایتون؛ متخصص در خودکارسازی فرآیندها و ساخت وب‌اپلیکیشن‌های هوشمند با قدرت AI." />
+  <meta property="og:image" content="assets/avatar.jpg" />
+  <meta property="og:url" content="https://erpycode.github.io" />
+  <meta property="og:site_name" content="ErPyCode Portfolio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ErPyCode | Portfolio" />
+  <meta name="twitter:description" content="توسعه‌دهنده پایتون؛ متخصص در خودکارسازی فرآیندها و ساخت وب‌اپلیکیشن‌های هوشمند." />
+  <meta name="twitter:image" content="assets/avatar.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red: #dc2626;
+      --red-dim: rgba(220,38,38,0.15);
+      --red-glow: rgba(220,38,38,0.4);
+      --bg: #000000;
+      --bg2: #0a0a0a;
+      --bg3: #141414;
+      --border: rgba(255,255,255,0.06);
+      --text: #ffffff;
+      --muted: #a1a1aa;
+      --font: 'Vazirmatn', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      overflow-x: hidden;
+      min-height: 100vh;
+      padding-bottom: 6rem;
+    }
+    @media (min-width: 768px) { body { padding-bottom: 5rem; } }
+
+    ::selection { background: var(--red); color: #fff; }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #000; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--red); }
+
+    /* ─── Entrance Screen ─── */
+    #entrance {
+      position: fixed; inset: 0; z-index: 200;
+      background: #000;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      font-family: 'Courier New', monospace;
+      padding: 1.5rem;
+      overflow: hidden;
+      transition: opacity .8s ease, transform .8s ease, filter .8s ease;
+    }
+    #entrance.exit {
+      opacity: 0;
+      transform: scale(1.08);
+      filter: blur(20px);
+      pointer-events: none;
+    }
+    #entrance.gone { display: none; }
+
+    .entrance-grid {
+      position: absolute; inset: 0; opacity: .08;
+      background-image:
+        linear-gradient(rgba(220,38,38,.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(220,38,38,.18) 1px, transparent 1px);
+      background-size: 100% 20px, 20px 100%;
+    }
+    .entrance-inner { width: 100%; max-width: 280px; position: relative; }
+    .entrance-label {
+      display: flex; justify-content: space-between;
+      margin-bottom: .5rem; padding: 0 2px;
+    }
+    .entrance-label span:first-child {
+      font-size: .65rem; font-weight: 900; font-style: italic;
+      color: var(--red); letter-spacing: .15em; text-transform: uppercase;
+      animation: blink 1.5s infinite;
+    }
+    .entrance-label span:last-child { font-size: .6rem; color: #444; font-style: italic; }
+
+    .entrance-bar-track {
+      height: 4px; background: #111; border-radius: 9999px;
+      overflow: hidden; border: 1px solid rgba(255,255,255,.05);
+    }
+    .entrance-bar-fill {
+      height: 100%; background: var(--red);
+      box-shadow: 0 0 20px var(--red-glow);
+      border-radius: 9999px;
+      width: 0%;
+      transition: width .6s ease;
+    }
+
+    .entrance-steps { margin-top: 2rem; display: flex; flex-direction: column; gap: .75rem; }
+    .entrance-step {
+      display: flex; align-items: center; gap: .75rem;
+      font-size: .65rem; color: #444;
+      opacity: 0; transform: translateX(-10px);
+      transition: all .4s ease;
+    }
+    .entrance-step.visible { opacity: .3; transform: translateX(0); color: #555; }
+    .entrance-step.active { opacity: 1; transform: translateX(0); color: #fff; font-weight: 700; }
+    .entrance-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #222; flex-shrink: 0;
+      transition: background .3s;
+    }
+    .entrance-step.active .entrance-dot {
+      background: var(--red);
+      box-shadow: 0 0 10px var(--red);
+      animation: blink .8s infinite;
+    }
+    .entrance-step.done .entrance-dot { background: #22c55e; }
+
+    .entrance-granted {
+      position: fixed; inset: 0; z-index: 210;
+      display: flex; align-items: center; justify-content: center;
+      pointer-events: none; padding: 1rem;
+      opacity: 0; transform: scale(.8) rotateX(90deg);
+      transition: all .4s cubic-bezier(.34,1.56,.64,1);
+    }
+    .entrance-granted.show { opacity: 1; transform: scale(1) rotateX(0); }
+    .entrance-granted-text {
+      background: rgba(220,38,38,.92);
+      color: #fff; padding: .75rem 2rem; font-family: 'Courier New', monospace;
+      font-size: clamp(1.2rem, 5vw, 2.2rem);
+      font-weight: 900; font-style: italic;
+      letter-spacing: -.05em; text-transform: uppercase;
+      border-radius: .75rem;
+      border: 2px solid rgba(255,255,255,.2);
+      box-shadow: 0 0 80px var(--red-glow);
+      white-space: nowrap;
+      text-align: center;
+      max-width: 90vw;
+    }
+    .entrance-footer {
+      position: absolute; bottom: 3rem;
+      display: flex; flex-direction: column; align-items: center; gap: .5rem;
+    }
+    .entrance-bars { display: flex; gap: .4rem; align-items: flex-end; height: 14px; }
+    .entrance-bar-item {
+      width: 3px; background: var(--red); border-radius: 2px;
+      animation: barDance .6s ease infinite;
+    }
+    .entrance-bar-item:nth-child(2) { animation-delay: .1s; }
+    .entrance-bar-item:nth-child(3) { animation-delay: .2s; }
+    .entrance-os-label {
+      font-size: .5rem; color: #333; letter-spacing: .5em; text-transform: uppercase;
+    }
+
+    /* ─── Main Content ─── */
+    #main { opacity: 0; transition: opacity .6s ease; }
+    #main.visible { opacity: 1; }
+
+    /* ─── Navbar ─── */
+    nav.desktop-nav {
+      display: none;
+      position: fixed; top: 2rem; left: 2rem; z-index: 60;
+    }
+    @media (min-width: 768px) { nav.desktop-nav { display: flex; } }
+    .nav-pill {
+      display: flex; align-items: center; gap: .5rem;
+      padding: .6rem 1.2rem;
+      background: rgba(0,0,0,.4); backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      font-size: .65rem; font-weight: 900; letter-spacing: .2em;
+      text-transform: uppercase; color: #fff;
+      text-decoration: none; cursor: pointer;
+      transition: border-color .2s;
+    }
+    .nav-pill:hover { border-color: var(--red); }
+    .nav-pill svg { width: 15px; height: 15px; transition: transform .2s; }
+    .nav-pill:hover svg { transform: translateX(-3px); }
+
+    /* ─── Sections ─── */
+    section, footer { opacity: 0; transform: translateY(30px); filter: blur(8px); transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1), filter .8s cubic-bezier(.22,1,.36,1); }
+    section.revealed, footer.revealed { opacity: 1; transform: translateY(0); filter: blur(0); }
+
+    /* ─── Hero ─── */
+    #hero {
+      padding: 5rem 1.5rem 4rem;
+      max-width: 80rem; margin: 0 auto;
+    }
+    @media (min-width: 640px) { #hero { padding: 10rem 3rem 4rem; } }
+    .hero-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; direction: ltr; }
+    @media (min-width: 768px) { .hero-grid { grid-template-columns: 1fr 1fr; } }
+    .hero-grid > * { direction: rtl; }
+
+    .hero-top { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    @media (min-width: 640px) { .hero-top { flex-wrap: nowrap; } }
+
+    .avatar-wrap { position: relative; flex-shrink: 0; }
+    .avatar-glow {
+      position: absolute; inset: 0; background: var(--red);
+      border-radius: 50%; filter: blur(20px); opacity: .15;
+      animation: pulse 3s ease infinite;
+    }
+    .avatar-ring {
+      width: 5rem; height: 5rem;
+      border: 2px solid var(--red); border-radius: 50%; padding: 3px;
+      position: relative; overflow: hidden;
+    }
+    @media (min-width: 640px) { .avatar-ring { width: 6rem; height: 6rem; } }
+    @media (min-width: 768px) { .avatar-ring { width: 8rem; height: 8rem; } }
+    .avatar-ring img {
+      width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
+      filter: grayscale(1); transition: filter .5s; transform: scale(1.1);
+    }
+    .avatar-ring:hover img { filter: grayscale(0); }
+    .avatar-badge {
+      position: absolute; bottom: -3px; right: -3px;
+      width: 1.25rem; height: 1.25rem;
+      background: var(--red); border-radius: 50%;
+      border: 2px solid #000;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .avatar-badge::after {
+      content: ''; width: .4rem; height: .4rem;
+      background: #fff; border-radius: 50%;
+      animation: ping 1.5s ease infinite;
+    }
+
+    /* Typewriter header */
+    #typewriter-header {
+      direction: ltr; text-align: left;
+      font-size: clamp(2.2rem, 8vw, 4.5rem);
+      font-weight: 900; line-height: .82; font-style: italic;
+      letter-spacing: -.04em;
+      height: 8rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    @media (min-width: 640px) { #typewriter-header { height: 10rem; } }
+    @media (min-width: 768px) { #typewriter-header { height: 13rem; font-size: clamp(2.5rem,6vw,4.5rem); } }
+    #typewriter-header .line1, #typewriter-header .line3 { color: #fff; }
+    #typewriter-header .line2 { color: var(--red); padding: .1em 0; }
+
+    .hero-bio {
+      color: var(--muted); font-size: .95rem; line-height: 1.8;
+      max-width: 28rem; margin-bottom: 2.5rem;
+      font-weight: 500;
+    }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
+    @media (min-width: 768px) { .hero-btns { justify-content: flex-start; } }
+
+    .btn-primary {
+      background: var(--red); color: #fff;
+      padding: .75rem 1.5rem; border-radius: 9999px;
+      font-weight: 700; font-size: .8rem;
+      text-decoration: none; display: inline-flex; align-items: center; gap: .5rem;
+      transition: background .2s, color .2s; border: none; cursor: pointer;
+      font-family: var(--font);
+      box-shadow: 0 4px 20px rgba(220,38,38,.15);
+    }
+    .btn-primary:hover { background: #fff; color: #000; }
+
+    .btn-ghost {
+      padding: .75rem 1.5rem; border-radius: 9999px;
+      font-weight: 700; font-size: .85rem; font-style: italic;
+      text-decoration: none; display: inline-flex; align-items: center; gap: .6rem;
+      border: 1px solid var(--border); color: #fff;
+      transition: color .2s, border-color .2s; background: transparent;
+      font-family: var(--font);
+    }
+    .btn-ghost:hover { color: var(--red); border-color: rgba(220,38,38,.3); }
+    .btn-ghost svg { transition: transform .2s; }
+    .btn-ghost:hover svg { transform: scale(1.15); }
+
+    /* ─── Terminal ─── */
+    #terminal-wrap {
+      background: #18181b;
+      border: 1px solid var(--border);
+      border-radius: .75rem;
+      overflow: hidden;
+      padding: 1.25rem;
+      height: 24rem;
+      display: flex; flex-direction: column;
+      direction: ltr;
+      display: none;
+    }
+    @media (min-width: 640px) { #terminal-wrap { display: flex; } }
+    .terminal-header {
+      display: flex; align-items: center; gap: .5rem; margin-bottom: 1rem;
+    }
+    .t-dot { width: .7rem; height: .7rem; border-radius: 50%; }
+    .t-dot.red { background: var(--red); }
+    .t-dot.dim { background: #3f3f46; }
+    .terminal-filename {
+      margin-left: 1rem; font-size: .6rem; color: #71717a;
+      font-family: 'Courier New', monospace;
+      letter-spacing: .15em; text-transform: uppercase;
+    }
+    .terminal-body { flex: 1; overflow: hidden; padding-top: .5rem; }
+    .terminal-line { display: flex; gap: .75rem; margin-bottom: .2rem; }
+    .terminal-ln {
+      color: #3f3f46; font-size: .6rem; min-width: 1.2rem;
+      text-align: right; font-family: 'Courier New', monospace;
+      user-select: none; margin-top: 2px;
+    }
+    .terminal-code {
+      font-family: 'Courier New', monospace; font-size: .7rem;
+      color: #a1a1aa; line-height: 1.5;
+    }
+    .terminal-code.active { color: #fff; }
+    .cursor {
+      display: inline-block; width: .4rem; height: .85em;
+      background: var(--red); vertical-align: middle; margin-left: 2px;
+      animation: blink .8s step-end infinite;
+    }
+    .terminal-footer {
+      margin-top: auto; padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,.04);
+      display: flex; justify-content: flex-end; align-items: center; gap: 1rem;
+    }
+    .terminal-sync {
+      font-family: 'Courier New', monospace; font-size: .6rem;
+      color: rgba(220,38,38,.5); font-weight: 900;
+      letter-spacing: .2em; text-transform: uppercase; font-style: italic;
+    }
+    .terminal-pos {
+      font-family: 'Courier New', monospace; font-size: .55rem; color: #71717a;
+    }
+
+    /* ─── About Section ─── */
+    #about {
+      padding: 5rem 1.5rem;
+      max-width: 56rem; margin: 0 auto;
+    }
+    @media (min-width: 640px) { #about { padding: 6rem 3rem; } }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center;
+    }
+    @media (min-width: 768px) { .about-grid { grid-template-columns: auto 1fr; gap: 3rem; } }
+    .about-avatar {
+      width: 10rem; height: 10rem; border-radius: 1.5rem; overflow: hidden;
+      border: 2px solid var(--border); position: relative; margin: 0 auto;
+    }
+    @media (min-width: 768px) { .about-avatar { margin: 0; } }
+    .about-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .about-text h2 {
+      font-size: 1.8rem; font-weight: 900; margin-bottom: 1rem;
+    }
+    .about-text h2 span { color: var(--red); }
+    .about-text p {
+      color: var(--muted); font-size: .9rem; line-height: 2;
+      margin-bottom: 1rem; font-weight: 500;
+    }
+    .about-stats {
+      display: flex; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap;
+    }
+    .about-stat {
+      text-align: center;
+    }
+    .about-stat-num {
+      font-size: 1.8rem; font-weight: 900; color: var(--red);
+      font-family: 'Courier New', monospace;
+    }
+    .about-stat-label {
+      font-size: .7rem; color: var(--muted); text-transform: uppercase;
+      letter-spacing: .1em; margin-top: .25rem;
+    }
+
+    /* ─── Skills Section ─── */
+    #skills {
+      background: #0a0a0a;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 5rem 1.5rem;
+    }
+    @media (min-width: 640px) { #skills { padding: 5rem 3rem; } }
+    .skills-grid {
+      max-width: 80rem; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 640px) { .skills-grid { grid-template-columns: repeat(3, 1fr); } }
+    .skill-card {
+      padding: 2rem;
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      transition: background .2s;
+    }
+    .skill-card:hover { background: #141414; }
+    .skill-icon { color: var(--red); margin-bottom: 1rem; transition: transform .2s; }
+    .skill-card:hover .skill-icon { transform: scale(1.15); }
+    .skill-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: .5rem; }
+    .skill-card p { font-size: .85rem; color: var(--muted); line-height: 1.7; font-weight: 500; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1rem; }
+    .skill-tag {
+      font-size: .55rem; padding: .2rem .6rem; border-radius: 9999px;
+      background: var(--red-dim); color: var(--red); font-weight: 700;
+      text-transform: uppercase; letter-spacing: .08em;
+    }
+
+    /* ─── Projects ─── */
+    #projects { padding: 6rem 1.5rem; max-width: 80rem; margin: 0 auto; }
+    @media (min-width: 640px) { #projects { padding: 8rem 3rem; } }
+    .section-title-row {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 4rem;
+    }
+    .section-title {
+      font-size: 2.2rem; font-weight: 900;
+    }
+    @media (min-width: 640px) { .section-title { font-size: 2.5rem; } }
+    .section-badge {
+      font-size: .6rem; font-weight: 700;
+      color: var(--red); text-transform: uppercase; letter-spacing: .2em;
+      font-family: 'Courier New', monospace;
+    }
+    .projects-grid {
+      display: grid; grid-template-columns: 1fr; gap: 2rem;
+    }
+    @media (min-width: 1024px) { .projects-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .project-card {
+      background: rgba(39,39,42,.25); border: 1px solid var(--border);
+      border-radius: 1.5rem; padding: 2rem;
+      display: flex; flex-direction: column;
+      cursor: pointer; text-align: right;
+      opacity: 0; transform: translateY(20px);
+      transition: opacity .4s ease, transform .4s ease, border-color .2s;
+    }
+    .project-card.visible { opacity: 1; transform: translateY(0); }
+    .project-card:hover { border-color: rgba(220,38,38,.4); transform: translateY(-8px); }
+
+    .project-thumb {
+      width: 100%; aspect-ratio: 16/9;
+      border-radius: .75rem; margin-bottom: 2rem;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .project-thumb-overlay {
+      position: absolute; inset: 0; background: rgba(0,0,0,.4);
+      transition: background .3s;
+    }
+    .project-card:hover .project-thumb-overlay { background: transparent; }
+    .project-thumb-icon {
+      position: relative; color: rgba(255,255,255,.75);
+      transition: transform .5s cubic-bezier(.22,1,.36,1);
+    }
+    .project-card:hover .project-thumb-icon { transform: scale(1.3); }
+
+    .project-title { font-size: 1.3rem; font-weight: 900; margin-bottom: 1rem; }
+    .project-desc {
+      font-size: .85rem; color: var(--muted); line-height: 1.8;
+      margin-bottom: 2rem; flex: 1; font-weight: 500;
+    }
+    .project-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 2rem; }
+    .tag {
+      font-size: .6rem; padding: .2rem .75rem;
+      background: rgba(255,255,255,.04); border-radius: 9999px;
+      color: #a1a1aa; font-weight: 700; text-transform: uppercase;
+    }
+    .project-footer {
+      border-top: 1px solid var(--border); padding-top: 1.25rem;
+      display: flex; justify-content: flex-end;
+    }
+    .ai-badge {
+      font-size: .6rem; font-weight: 700; font-style: italic;
+      color: rgba(220,38,38,.7); letter-spacing: .15em; text-transform: uppercase;
+      font-family: 'Courier New', monospace;
+      transition: color .2s;
+    }
+    .project-card:hover .ai-badge { color: var(--red); }
+
+    /* ─── Filter Tabs ─── */
+    .filter-row {
+      display: flex; flex-wrap: wrap; gap: .5rem;
+      margin-bottom: 2.5rem; justify-content: center;
+    }
+    @media (min-width: 640px) { .filter-row { justify-content: flex-end; } }
+    .filter-tab {
+      padding: .5rem 1.1rem; border-radius: 9999px;
+      font-size: .65rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .12em; cursor: pointer;
+      background: transparent; color: var(--muted);
+      border: 1px solid var(--border); transition: all .25s;
+      font-family: var(--font);
+    }
+    .filter-tab:hover { color: #fff; border-color: rgba(255,255,255,.15); }
+    .filter-tab.active {
+      background: var(--red); color: #fff;
+      border-color: var(--red); box-shadow: 0 4px 16px rgba(220,38,38,.2);
+    }
+
+    /* ─── Load More ─── */
+    .load-more-wrap {
+      text-align: center; margin-top: 3rem;
+    }
+    .load-more-btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .75rem 2rem; border-radius: 9999px;
+      background: transparent; border: 1px solid var(--border);
+      color: #fff; font-size: .75rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      cursor: pointer; transition: all .25s; font-family: var(--font);
+    }
+    .load-more-btn:hover {
+      border-color: var(--red); color: var(--red);
+      box-shadow: 0 4px 20px rgba(220,38,38,.1);
+    }
+    .load-more-btn svg { transition: transform .3s; }
+    .load-more-btn:hover svg { transform: translateY(3px); }
+    .load-more-btn.hidden { display: none; }
+
+    /* ─── Contact ─── */
+    #contact { padding: 4rem 1rem; max-width: 56rem; margin: 0 auto; }
+    @media (min-width: 640px) { #contact { padding: 5rem 1.5rem; } }
+    .contact-card {
+      position: relative; background: #141414;
+      border: 1px solid rgba(220,38,38,.2);
+      border-radius: 2rem; padding: 2.5rem 1.5rem;
+      overflow: hidden; text-align: center;
+    }
+    @media (min-width: 640px) {
+      .contact-card { padding: 3rem 2.5rem; text-align: right; }
+    }
+    .contact-glow {
+      position: absolute; left: -5rem; bottom: -5rem;
+      width: 20rem; height: 20rem;
+      background: rgba(220,38,38,.07); border-radius: 50%; filter: blur(80px);
+    }
+    .contact-card h2 {
+      font-size: 1.6rem; font-weight: 900; font-style: italic;
+      margin-bottom: 1rem; position: relative;
+    }
+    @media (min-width: 640px) { .contact-card h2 { font-size: 2.2rem; } }
+    .contact-card p {
+      color: var(--muted); line-height: 1.8; font-size: .9rem;
+      margin-bottom: 2rem; font-weight: 500; position: relative;
+    }
+    .contact-btns {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: .75rem; position: relative;
+    }
+    @media (min-width: 768px) { .contact-btns { grid-template-columns: repeat(5, 1fr); } }
+    .contact-btn {
+      padding: .75rem 1rem; border-radius: 9999px;
+      font-weight: 700; font-size: .7rem;
+      display: flex; align-items: center; justify-content: center; gap: .4rem;
+      text-decoration: none; cursor: pointer; border: none;
+      font-family: var(--font); transition: all .2s;
+    }
+    .contact-btn.primary { background: var(--red); color: #fff; box-shadow: 0 4px 20px rgba(220,38,38,.2); }
+    .contact-btn.primary:hover { background: #fff; color: #000; }
+    .contact-btn.ghost { background: rgba(255,255,255,.04); color: #fff; border: 1px solid var(--border); }
+    .contact-btn.ghost:hover { border-color: rgba(220,38,38,.4); }
+    .contact-btn.github:hover { border-color: #fff; }
+    .contact-btn.telegram:hover { border-color: #3b82f6; }
+    .contact-btn.instagram:hover { border-color: #ec4899; }
+
+    /* ─── Footer ─── */
+    footer {
+      text-align: center; padding: 4rem 1.5rem;
+      opacity: 0;
+      font-size: .65rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .3em;
+      color: rgba(255,255,255,.35);
+      direction: ltr;
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    footer.revealed { opacity: .5 !important; }
+    .footer-line { width: 3rem; height: 1px; background: var(--red); }
+    /* ─── Floating Back to Top ─── */
+    #back-to-top {
+      position: fixed; bottom: 5rem; right: 1.5rem; z-index: 55;
+      width: 2.5rem; height: 2.5rem;
+      background: var(--red); color: #fff;
+      border: none; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; opacity: 0; transform: translateY(20px);
+      transition: opacity .3s, transform .3s, background .2s;
+      box-shadow: 0 4px 20px rgba(220,38,38,.3);
+    }
+    #back-to-top.show { opacity: 1; transform: translateY(0); }
+    #back-to-top:hover { background: #fff; color: #000; }
+    @media (min-width: 768px) { #back-to-top { bottom: 2rem; right: 2rem; } }
+
+    /* ─── Mobile Bottom Nav ─── */
+    #mobile-nav {
+      position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%) translateY(100px);
+      z-index: 50; width: 90%; max-width: 22rem;
+      opacity: 0; transition: transform .6s cubic-bezier(.34,1.56,.64,1), opacity .4s ease;
+    }
+    #mobile-nav.visible { transform: translateX(-50%) translateY(0); opacity: 1; }
+    @media (min-width: 768px) { #mobile-nav { display: none; } }
+    .mobile-nav-inner {
+      background: rgba(0,0,0,.6); backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 9999px; padding: .75rem .5rem;
+      display: flex; justify-content: space-between; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    .nav-left, .nav-right {
+      display: flex; align-items: center; gap: 2rem;
+      flex: 1;
+    }
+    .nav-right { justify-content: flex-end; }
+    .nav-scan {
+      position: absolute; top: 0; left: -100%; height: 1px; width: 100%;
+      background: linear-gradient(90deg, transparent, var(--red), transparent);
+      animation: navScan 7s ease-in-out infinite;
+    }
+    .nav-item {
+      display: flex; flex-direction: column; align-items: center; gap: 3px;
+      color: var(--muted); text-decoration: none;
+      transition: color .2s; cursor: pointer; background: none; border: none;
+      font-family: var(--font); padding: .25rem .5rem;
+    }
+    .nav-item:hover, .nav-item:focus { color: var(--red); }
+    .nav-item span { font-size: .6rem; font-weight: 700; }
+    .nav-item svg { width: 1.1rem; height: 1.1rem; }
+
+    .nav-avatar-btn {
+      width: 3rem; height: 3rem; background: var(--red);
+      border-radius: 50%; margin-top: -2.5rem;
+      border: 3px solid #000;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; overflow: hidden;
+      box-shadow: 0 4px 20px var(--red-glow);
+      transition: transform .2s; flex-shrink: 0;
+      position: absolute; left: 50%; transform: translateX(-50%);
+    }
+    .nav-avatar-btn:active { transform: translateX(-50%) scale(.92); }
+    .nav-avatar-btn img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.1); }
+
+    /* ─── Project Modal ─── */
+    #modal-backdrop {
+      position: fixed; inset: 0; z-index: 150;
+      background: rgba(0,0,0,.95); backdrop-filter: blur(20px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 1rem;
+      opacity: 0; pointer-events: none;
+      transition: opacity .3s ease;
+    }
+    #modal-backdrop.open { opacity: 1; pointer-events: auto; }
+
+    .modal-bits {
+      position: absolute; inset: 0; overflow: hidden; opacity: .15;
+      display: flex; flex-wrap: wrap; gap: .4rem; padding: 1rem; justify-content: center;
+      pointer-events: none;
+    }
+
+    #modal-box {
+      background: #09090b; border: 1px solid rgba(220,38,38,.25);
+      width: 100%; max-width: 42rem; border-radius: 1.5rem;
+      overflow: hidden; position: relative;
+      box-shadow: 0 0 100px rgba(220,38,38,.12);
+      transform: scale(.85) skewX(15deg);
+      opacity: 0;
+      transition: transform .5s cubic-bezier(.22,1,.36,1), opacity .4s ease;
+    }
+    #modal-backdrop.open #modal-box {
+      transform: scale(1) skewX(0);
+      opacity: 1;
+    }
+
+    .modal-titlebar {
+      background: rgba(220,38,38,.04);
+      border-bottom: 1px solid rgba(255,255,255,.04);
+      padding: 1rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .modal-dots { display: flex; gap: .4rem; align-items: center; }
+    .modal-dot { width: .85rem; height: .85rem; border-radius: 50%; cursor: pointer; transition: filter .2s; }
+    .modal-dot.red { background: var(--red); box-shadow: 0 0 8px var(--red-glow); }
+    .modal-dot.red:hover { filter: brightness(1.3); }
+    .modal-dot.dim { background: rgba(255,255,255,.08); }
+    .modal-status {
+      display: flex; align-items: center; gap: .5rem;
+      font-family: 'Courier New', monospace; font-size: .6rem;
+      color: rgba(220,38,38,.7); font-weight: 700;
+      text-transform: uppercase; letter-spacing: .2em;
+    }
+    .modal-status-dot {
+      width: .4rem; height: .4rem; border-radius: 50%;
+      background: var(--red); animation: blink .8s infinite;
+    }
+
+    .modal-body {
+      padding: 2.5rem; max-height: 80vh;
+      overflow-y: auto; direction: rtl;
+    }
+    @media (min-width: 640px) { .modal-body { padding: 3rem; } }
+    .modal-body::-webkit-scrollbar { width: 4px; }
+    .modal-body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+
+    .modal-icon {
+      width: 3.5rem; height: 3.5rem; border-radius: .75rem;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 2rem; color: rgba(255,255,255,.85);
+      box-shadow: 0 4px 20px rgba(0,0,0,.4);
+    }
+    .modal-title {
+      font-size: 2rem; font-weight: 900; font-style: italic;
+      letter-spacing: -.03em; margin-bottom: 1.5rem;
+    }
+    .modal-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2rem; }
+    .modal-tag {
+      font-size: .6rem; padding: .25rem .85rem;
+      background: rgba(220,38,38,.08); border: 1px solid rgba(220,38,38,.2);
+      border-radius: 9999px; color: rgba(220,38,38,.8);
+      font-weight: 700; text-transform: uppercase; letter-spacing: .1em;
+    }
+    .modal-desc {
+      color: #a1a1aa; line-height: 1.9; font-size: .9rem;
+      font-weight: 500; white-space: pre-wrap;
+      border-right: 2px solid rgba(220,38,38,.15);
+      padding-right: 1rem;
+    }
+    .modal-github {
+      margin-top: 3rem; display: flex; flex-direction: column;
+      align-items: center; gap: 1.5rem;
+    }
+    @media (min-width: 640px) { .modal-github { flex-direction: row; } }
+
+    /* ─── Matrix overlay ─── */
+    #matrix-overlay {
+      position: fixed; inset: 0; z-index: 100;
+      background: rgba(0,0,0,.6); backdrop-filter: blur(4px);
+      pointer-events: none; overflow: hidden;
+      opacity: 0; transition: opacity .5s;
+    }
+    #matrix-overlay.show { opacity: 1; }
+    .matrix-cols {
+      position: absolute; inset: 0;
+      display: flex; justify-content: space-around; opacity: .25;
+    }
+    .matrix-col {
+      color: var(--red); font-size: .6rem;
+      font-family: 'Courier New', monospace;
+      writing-mode: vertical-rl; letter-spacing: .5em;
+      white-space: nowrap; line-height: 1;
+    }
+    .matrix-vignette {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, #000 0%, transparent 30%, transparent 70%, #000 100%);
+    }
+    .matrix-center {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center; padding: 1rem;
+    }
+    .matrix-msg {
+      background: rgba(220,38,38,.88); backdrop-filter: blur(8px);
+      color: #fff; padding: .75rem 2rem;
+      font-family: 'Courier New', monospace; font-size: clamp(1rem, 5vw, 2rem);
+      font-weight: 900; font-style: italic; letter-spacing: -.04em;
+      text-transform: uppercase; border-radius: .75rem;
+      border: 2px solid rgba(255,255,255,.2);
+      box-shadow: 0 0 50px var(--red-glow);
+      text-shadow: 0 0 20px rgba(255,0,0,.5);
+      white-space: nowrap; max-width: 90vw; text-align: center;
+    }
+
+    /* ─── SVG Icons (inline) ─── */
+    .icon { display: inline-block; vertical-align: middle; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ─── Animations ─── */
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    @keyframes ping { 0%{transform:scale(1);opacity:.8} 100%{transform:scale(2);opacity:0} }
+    @keyframes pulse { 0%,100%{opacity:.15} 50%{opacity:.3} }
+    @keyframes barDance { 0%,100%{height:4px} 50%{height:14px} }
+    @keyframes navScan { 0%{left:-100%;opacity:0} 20%{opacity:1} 80%{opacity:1} 100%{left:100%;opacity:0} }
+    @keyframes matrixFall {
+      0%{transform:translateY(-100%)}
+      100%{transform:translateY(calc(100vh + 100%))}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     ENTRANCE SCREEN
+══════════════════════════════════════════ -->
+<div id="entrance">
+  <div class="entrance-grid"></div>
+  <div class="entrance-inner">
+    <div class="entrance-label">
+      <span>ESTABLISHING_CONNECTION</span>
+      <span>SECURE_BOOT_V1</span>
+    </div>
+    <div class="entrance-bar-track">
+      <div class="entrance-bar-fill" id="entrance-fill"></div>
+    </div>
+    <div class="entrance-steps" id="entrance-steps"></div>
+  </div>
+  <div class="entrance-footer">
+    <div class="entrance-bars">
+      <div class="entrance-bar-item" style="height:4px"></div>
+      <div class="entrance-bar-item" style="height:4px"></div>
+      <div class="entrance-bar-item" style="height:4px"></div>
+    </div>
+    <div class="entrance-os-label">ErPyCode_os</div>
+  </div>
+</div>
+
+<div class="entrance-granted" id="entrance-granted">
+  <div class="entrance-granted-text">ACCESS_GRANTED</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     MAIN CONTENT
+══════════════════════════════════════════ -->
+<div id="main">
+
+  <!-- Desktop nav -->
+  <nav class="desktop-nav">
+    <a href="#hero" class="nav-pill" id="exit-btn">
+      <svg class="icon" viewBox="0 0 24 24" width="15" height="15"><polyline points="15 18 9 12 15 6"/></svg>
+      <span>بازگشت به بالا</span>
+    </a>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-grid">
+      <!-- Left column: terminal -->
+      <div style="position:relative;" id="terminal-col">
+        <div style="position:absolute;inset:0;background:rgba(220,38,38,.07);filter:blur(100px);z-index:-1;border-radius:1rem;"></div>
+        <div id="terminal-wrap">
+          <div class="terminal-header">
+            <div class="t-dot red"></div>
+            <div class="t-dot dim"></div>
+            <div class="t-dot dim"></div>
+            <span class="terminal-filename" id="terminal-filename">automation.py</span>
+          </div>
+          <div class="terminal-body" id="terminal-body"></div>
+          <div class="terminal-footer">
+            <span class="terminal-sync">Syncing_Terminal</span>
+            <span class="terminal-pos" id="terminal-pos">LN 1 : COL 1</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column: text -->
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;">
+        <div class="hero-top">
+          <!-- Avatar -->
+          <div class="avatar-wrap">
+            <div class="avatar-glow"></div>
+            <div class="avatar-ring">
+              <img src="assets/avatar.jpg" alt="ErPyCode" loading="eager" />
+            </div>
+            <div class="avatar-badge"></div>
+          </div>
+          <!-- Typewriter -->
+          <div id="typewriter-header">
+            <span class="line1" id="tw-l1"></span>
+            <span class="line2" id="tw-l2"></span>
+            <span class="line3" id="tw-l3"></span>
+          </div>
+        </div>
+
+        <p class="hero-bio">
+          توسعه‌دهنده پایتون؛ متخصص در خودکارسازی فرآیندها و ساخت وب‌اپلیکیشن‌های هوشمند با قدرت AI.
+        </p>
+
+        <div class="hero-btns">
+          <a href="#projects" class="btn-primary">
+            <svg class="icon" viewBox="0 0 24 24" width="17" height="17"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+            مشاهده پروژه‌ها
+          </a>
+          <a href="https://github.com/ErPyCode" target="_blank" rel="noopener noreferrer" class="btn-ghost">
+            GitHub
+            <svg class="icon" viewBox="0 0 24 24" width="19" height="19"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-avatar">
+        <img src="assets/avatar.jpg" alt="ErPyCode" loading="lazy" />
+      </div>
+      <div class="about-text">
+        <h2>من <span>عرفان</span> هستم</h2>
+        <p>
+          توسعه‌دهنده پایتون با علاقه‌مندی به خودکارسازی فرآیندها و ساخت ابزارهای کاربردی.
+          هدفم تبدیل ایده‌ها به کد تمیز و کاربردیه که مشکلات واقعی رو حل کنه.
+        </p>
+        <p>
+          از اسکریپت‌نویسی پایتون تا توسعه وب‌اپلیکیشن‌های مدرن؛ هر روز دارم یاد می‌گیرم
+          و بهتر می‌شم. معتقدم بهترین راه یادگیری، ساختن پروژه‌های واقعیه.
+        </p>
+        <div class="about-stats">
+          <div class="about-stat">
+            <div class="about-stat-num">10+</div>
+            <div class="about-stat-label">پروژه</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num">12+</div>
+            <div class="about-stat-label">ستاره گیتهاب</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num">Python</div>
+            <div class="about-stat-label">زبان اصلی</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg class="icon" viewBox="0 0 24 24" width="28" height="28"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+        </div>
+        <h3>اسکریپت‌نویسی پایتون</h3>
+        <p>خودکارسازی کارهای دشوار و مدیریت هوشمند داده‌ها</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Regex</span>
+          <span class="skill-tag">Pathlib</span>
+          <span class="skill-tag">Automation</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg class="icon" viewBox="0 0 24 24" width="28" height="28"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>وب‌اپ‌های کاربردی و مدرن</h3>
+        <p>توسعه ابزارهای تعاملی با تمرکز بر تجربه کاربری و منطق قوی</p>
+        <div class="skill-tags">
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Vite</span>
+          <span class="skill-tag">Tailwind</span>
+          <span class="skill-tag">HTML/CSS</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg class="icon" viewBox="0 0 24 24" width="28" height="28"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3>توسعه وب و ابری</h3>
+        <p>استقرار اپلیکیشن‌ها روی زیرساخت‌های ابری مدرن</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Cloudflare</span>
+          <span class="skill-tag">Workers</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">Linux</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="section-title-row">
+      <h2 class="section-title">خروجی_کدها</h2>
+      <span class="section-badge">Build v1.0</span>
+    </div>
+    <div class="filter-row" id="filter-row"></div>
+    <div class="projects-grid" id="projects-grid"></div>
+    <div class="load-more-wrap">
+      <button class="load-more-btn" id="load-more-btn" onclick="loadMoreProjects()">
+        <span>پروژه‌های بیشتر</span>
+        <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="16" height="16"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="contact-card">
+      <div class="contact-glow"></div>
+      <h2>پروژه جدید در ذهن داری؟</h2>
+      <p>
+        توسعه منطق پیچیده پایتون یا خلق رابط‌های کاربری مدرن؛ من آماده‌ام ایده‌هایت را به کد تبدیل کنم.
+        بیا با هم چیزی متفاوت بسازیم.
+      </p>
+      <div class="contact-btns">
+        <a href="mailto:erpycode@gmail.com" class="contact-btn primary">
+          <svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          ایمیل
+        </a>
+        <a href="https://github.com/ErPyCode" target="_blank" rel="noopener" class="contact-btn ghost github">
+          <svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
+        </a>
+        <a href="https://t.me/ErPyCode" target="_blank" rel="noopener" class="contact-btn ghost telegram">
+          <svg class="icon" viewBox="0 0 24 24" width="16" height="16" style="color:#60a5fa"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Telegram
+        </a>
+        <a href="https://instagram.com/ErPyCode" target="_blank" rel="noopener" class="contact-btn ghost instagram">
+          <svg class="icon" viewBox="0 0 24 24" width="16" height="16" style="color:#f472b6"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-line"></div>
+    ErPyCode // (C) 2026 // DIGITAL SIGNATURE
+  </footer>
+
+</div><!-- /main -->
+
+<!-- Floating Back to Top -->
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="بازگشت به بالا">
+  <svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="18" height="18"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- Mobile Nav -->
+<div id="mobile-nav">
+  <div class="mobile-nav-inner">
+    <div class="nav-scan"></div>
+    <div class="nav-left">
+      <a href="#hero" class="nav-item">
+        <svg class="icon" viewBox="0 0 24 24" width="18" height="18"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="9 22 9 12 15 12 15 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>خانه</span>
+      </a>
+      <a href="#projects" class="nav-item">
+        <svg class="icon" viewBox="0 0 24 24" width="18" height="18"><rect x="1" y="4" width="22" height="16" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="1" y1="10" x2="23" y2="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>پروژه‌ها</span>
+      </a>
+    </div>
+    <a href="#about" class="nav-avatar-btn" id="matrix-btn">
+      <img src="assets/avatar.jpg" alt="ErPyCode" loading="lazy" />
+    </a>
+    <div class="nav-right">
+      <a href="#contact" class="nav-item">
+        <svg class="icon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>تماس</span>
+      </a>
+      <a href="https://github.com/ErPyCode" target="_blank" rel="noopener" class="nav-item">
+        <svg class="icon" viewBox="0 0 24 24" width="18" height="18"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>گیت‌هاب</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Project Modal -->
+<div id="modal-backdrop" onclick="closeModal(event)">
+  <div class="modal-bits" id="modal-bits"></div>
+  <div id="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-titlebar">
+      <div class="modal-dots">
+        <div class="modal-dot red" onclick="closeModal()"></div>
+        <div class="modal-dot dim"></div>
+        <div class="modal-dot dim"></div>
+      </div>
+      <div class="modal-status">
+        <div class="modal-status-dot"></div>
+        Project_Protocol_Active
+      </div>
+      <div style="width:3rem;height:1px;background:rgba(220,38,38,.15)"></div>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<!-- Matrix Overlay -->
+<div id="matrix-overlay">
+  <div class="matrix-cols" id="matrix-cols"></div>
+  <div class="matrix-vignette"></div>
+  <div class="matrix-center">
+    <div class="matrix-msg">SYSTEM_ACCESS_GRANTED</div>
+  </div>
+</div>
+
+
+<script>
+// ════════════════════════════════════════════════
+// DATA
+// ════════════════════════════════════════════════
+const PROJECTS = [
+  {
+    title: "Nahan Installer",
+    desc: "نصب خودکار دروازه شبکه Nahan روی Cloudflare Workers — محبوب‌ترین پروژه با ۱۴ استار.",
+    demo: "https://erpycode.github.io/nahan-installer/",
+    longDesc: `Nahan Installer یک ابزار ساده و قدرتمند برای نصب و راه‌اندازی سریع دروازه شبکه Nahan روی Cloudflare Workers است. با اجرای یک دستور، Nahan به طور کامل مستقر می‌شود.
+
+ویژگی‌های کلیدی:
+• نصب خودکار و سریع با یک دستور.
+• راهنمای گام‌به‌گام تنظیمات و پیکربندی.
+• پشتیبانی از محیط‌های مختلف سیستم‌عامل.
+• بدون نیاز به دانش فنی پیشرفته.
+• اتوماسیون کامل فرآیند استقرار.`,
+    tech: ["Shell","Automation","Cloudflare Workers"],
+    iconSvg: `<svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="24" height="24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+    gradient: "linear-gradient(135deg, rgba(220,38,38,.7), rgba(153,17,17,1))",
+    github: "https://github.com/erpycode/nahan-installer"
+  },
+  {
+    title: "Cloudflare Request Calc",
+    desc: "ماشین‌حساب سریع و سبک محاسبه ترافیک کلودفلر — تبدیل گیگابایت به ریکوئست و بالعکس با رابط کاربری شیشه‌ای.",
+    longDesc: `Cloudflare Request Calc یک ابزار آنلاین سریع و سبک برای محاسبه ترافیک کلودفلر است. با استفاده از این ابزار می‌توانید به راحتی بین گیگابایت و تعداد ریکوئست تبدیل کنید.
+
+ویژگی‌های کلیدی:
+• محاسبه آنی و دقیق ترافیک کلودفلر.
+• رابط کاربری مدرن با افکت Glassmorphism.
+• واکنش‌گرا و قابل استفاده در موبایل و دسکتاپ.
+• بدون نیاز به سرور — کاملاً در مرورگر اجرا می‌شود.
+• طراحی زیبا و کاربرپسند با تمرکز بر تجربه کاربری.`,
+    tech: ["HTML","CSS","JavaScript","Glassmorphism"],
+    iconSvg: `<svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="24" height="24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
+    gradient: "linear-gradient(135deg, rgba(249,115,22,.7), rgba(234,88,12,1))",
+    github: "https://github.com/erpycode/cloudflare-request-calc",
+    demo: "https://erpycode.github.io/cloudflare-request-calc"
+  },
+  {
+    title: "Password Generator",
+    desc: "تولیدکننده رمز عبور امن پایتون — رمزهای قوی می‌سازد، کپی می‌کند و اختیاری ذخیره می‌کند.",
+    longDesc: `Password Generator یک ابزار خط فرمان پایتونی برای تولید رمزهای عبور قوی و امن است. این ابزار رمز تصادفی می‌سازد و به صورت خودکار در کلیپبورد کپی می‌کند.
+
+ویژگی‌های کلیدی:
+• تولید رمز عبور قوی و تصادفی با طول دلخواه.
+• کپی خودکار در کلیپبورد.
+• ذخیره اختیاری رمزها در فایل متنی.
+• پشتیبانی از حروف، اعداد و نمادها.
+• رابط خط فرمان ساده و کاربرپسند.`,
+    tech: ["Python","Security","CLI"],
+    iconSvg: `<svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="24" height="24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
+    gradient: "linear-gradient(135deg, rgba(34,197,94,.7), rgba(22,101,52,1))",
+    github: "https://github.com/erpycode/Password_Generator"
+  },
+  {
+    title: "StyleFlow Barbershop",
+    desc: "اپلیکیشن مدرن فول‌استک مدیریت نوبت‌دهی آرایشگاه با دستیار هوشمند و پشتیبانی دوزبانه.",
+    longDesc: `StyleFlow یک راهکار کامل برای مدیریت آرایشگاه‌های مدرن است. این پروژه با تمرکز بر تجربه کاربری (UX) توسعه یافته و از هوش مصنوعی برای مشاوره استایل به مشتریان بهره می‌برد.
+
+ویژگی‌های کلیدی:
+• پشتیبانی کامل از دو زبان (Persian/English) با تغییر جهت چیدمان (RTL/LTR).
+• استفاده از LocalStorage برای تجربه ذخیره‌سازی آفلاین و دمو.
+• دستیار هوشمند داخلی مبتنی بر Google Gemini AI برای پاسخ به سوالات مشتریان.
+• پنل مدیریت پیشرفته برای کنترل خدمات و نوبت‌ها.
+• طراحی کاملاً واکنش‌گرا با انیمیشن‌های نرم (Motion).`,
+    tech: ["React","Vite","Gemini AI","Tailwind","Motion"],
+    iconSvg: `<svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="24" height="24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>`,
+    gradient: "linear-gradient(135deg, rgba(255,106,0,.7), rgba(120,10,10,1))",
+    github: "https://github.com/ErPyCode/StyleFlow-Barbershop"
+  },
+  {
+    title: "Nahan",
+    desc: "دروازه شبکه امن و سبک روی Cloudflare Workers — بدون نیاز به سرور اختصاصی.",
+    longDesc: `Nahan یک دروازه شبکه امن، سبک و قابل تنظیم است که به طور کامل روی Cloudflare Workers اجرا می‌شود. این پروژه برای مدیریت ترافیک و فیلتر کردن درخواست‌ها طراحی شده است.
+
+ویژگی‌های کلیدی:
+• اجرای کامل روی Cloudflare Workers (بدون سرور).
+• امنیت بالا در مدیریت ترافیک شبکه.
+• قابلیت تنظیم و شخصی‌سازی آسان.
+• پشتیبانی از روتینگ و فیلترینگ درخواست‌ها.
+• عملکرد سریع با تاخیر بسیار کم.`,
+    tech: ["Cloudflare Workers","JavaScript","Security"],
+    iconSvg: `<svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
+    gradient: "linear-gradient(135deg, rgba(99,102,241,.7), rgba(55,48,163,1))",
+    github: "https://github.com/erpycode/nahan"
+  },
+  {
+    title: "IP Extractor",
+    desc: "استخراج، پاکسازی و فیلتر آدرس‌های IP از خروجی اسکنرها و فایل‌های لاگ در مرورگر.",
+    longDesc: `IP Extractor یک ابزار آنلاین برای استخراج و پاکسازی آدرس‌های IP از فایل‌های مختلف است. این ابزار مستقیماً در مرورگر شما اجرا می‌شود و نیازی به نصب ندارد.
+
+ویژگی‌های کلیدی:
+• استخراج خودکار آدرس‌های IP از متن و فایل‌ها.
+• پاکسازی و حذف IPهای تکراری.
+• فیلتر کردن بر اساس محدوده آدرس.
+• پشتیبانی از فرمت‌های مختلف ورودی (CSV, log, scanner output).
+• خروجی تمیز و قابل کپی.`,
+    tech: ["HTML","JavaScript","Browser"],
+    iconSvg: `<svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="24" height="24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>`,
+    gradient: "linear-gradient(135deg, rgba(168,85,247,.7), rgba(91,33,182,1))",
+    github: "https://github.com/erpycode/ip-extractor"
+  },
+  {
+    title: "Sort Exported Projects",
+    desc: "اسکریپت پایتون هوشمند برای سازماندهی خودکار پروژه‌های ویدیویی خروجی گرفته شده.",
+    longDesc: `این اسکریپت ابزاری کاربردی برای تدوینگران حرفه‌ای است که با حجم انبوهی از فایل‌های ویدئویی سر و کار دارند. این ابزار به طور هوشمند فایل‌های خروجی نهایی را از راش‌های خام دوربین تشخیص داده و آرشیو می‌کند.
+
+ویژگی‌های کلیدی:
+• تشخیص هوشمند فایل‌های خام (Regex) از خروجی‌های نهایی.
+• انتقال خودکار پروژه‌های تکمیل شده به پوشه Exported.
+• پشتیبانی از تمامی فرمت‌های ویدیویی رایج (MP4, MOV, MTS و ...).
+• دارای حالت Dry-run برای شبیه‌سازی عملیات قبل از جابجایی واقعی.
+• امنیت بالا در جابجایی فایل‌ها و جلوگیری از تداخل نام‌ها.`,
+    tech: ["Python","Automation","Regex","Pathlib"],
+    iconSvg: `<svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="24" height="24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>`,
+    gradient: "linear-gradient(135deg, #27272a, #000)",
+    github: "https://github.com/erpycode/sort-exported-projects"
+  },
+  {
+    title: "File Organizer",
+    desc: "اسکریپت پایتون برای سازماندهی خودکار فایل‌ها در پوشه‌های دسته‌بندی شده با حالت پیش‌نمایش.",
+    longDesc: `File Organizer یک ابزار ساده و کاربردی پایتونی برای مرتب کردن خودکار فایل‌هاست. این ابزار فایل‌ها را بر اساس نوع آن‌ها در پوشه‌های جداگانه قرار می‌دهد.
+
+ویژگی‌های کلیدی:
+• دسته‌بندی خودکار فایل‌ها بر اساس پسوند.
+• پشتیبانی از حالت Dry-run برای پیش‌نمایش تغییرات.
+• امکان انتقال یا کپی فایل‌ها.
+• پشتیبانی از تمامی فرمت‌های رایج.
+• رابط خط فرمان ساده و امن.`,
+    tech: ["Python","Automation","CLI","Pathlib"],
+    iconSvg: `<svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="24" height="24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>`,
+    gradient: "linear-gradient(135deg, rgba(14,165,233,.7), rgba(3,105,161,1))",
+    github: "https://github.com/erpycode/file_orgenizer"
+  },
+  {
+    title: "Phone Book",
+    desc: "مدیریت دفتر تلفن در ترمینال با ذخیره‌سازی JSON و رابط خط فرمان ساده.",
+    longDesc: `Phone Book یک ابزار خط فرمان پایتونی برای مدیریت مخاطبین است. این ابزار اطلاعات را به صورت JSON ذخیره می‌کند و دسترسی سریع به شماره‌ها را فراهم می‌کند.
+
+ویژگی‌های کلیدی:
+• اضافه کردن، ویرایش و حذف مخاطبین.
+• ذخیره‌سازی اطلاعات به فرمت JSON.
+• جستجوی سریع در بین مخاطبین.
+• رابط خط فرمان تمیز و کاربرپسند.
+• پشتیبانی از چند شماره برای هر مخاطب.`,
+    tech: ["Python","JSON","CLI","Terminal"],
+    iconSvg: `<svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="24" height="24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`,
+    gradient: "linear-gradient(135deg, rgba(236,72,153,.7), rgba(157,23,77,1))",
+    github: "https://github.com/erpycode/phone_book"
+  },
+  {
+    title: "Git Tutorial",
+    desc: "آموزش گیت و گیتهاب — راهنمای کامل مبتدیان برای یادگیری سیستم کنترل نسخه.",
+    longDesc: `Git Tutorial یک مجموعه آموزشی برای یادگیری Git و GitHub است. این پروژه شامل مثال‌های عملی و توضیحات ساده برای مبتدیان است.
+
+ویژگی‌های کلیدی:
+• آموزش مفاهیم پایه Git از صفر.
+• مثال‌های عملی و قابل اجرا.
+• توضیح فرمان‌های پرکاربرد.
+• راهنمای ایجاد و مدیریت Repository.
+• نکات و ترفندهای مفید.`,
+    tech: ["Git","GitHub","Tutorial"],
+    iconSvg: `<svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="24" height="24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>`,
+    gradient: "linear-gradient(135deg, rgba(245,158,11,.7), rgba(180,83,9,1))",
+    github: "https://github.com/erpycode/gittutorial"
+  }
+];
+
+const CODE_BLOCKS = [
+  { filename: "automation.py", code: [
+    "import os, re",
+    "from pathlib import Path",
+    "",
+    "def is_raw(file):",
+    "    # Pattern: Letter + 4 digits",
+    "    return re.match(r'^[a-zA-Z]\\d{4}', file.stem)",
+    "",
+    "for folder in Path('Projects').iterdir():",
+    "    has_export = any(not is_raw(f) for f in folder.glob('*.mp4'))",
+    "    if has_export:",
+    "        move(folder, 'Exported/')",
+    "        print(f'Archived: {folder.name}')"
+  ]},
+  { filename: "Dashboard.tsx", code: [
+    "import React from 'react';",
+    "import { motion } from 'framer-motion';",
+    "",
+    "export const Widget = () => {",
+    "  return (",
+    "    <motion.div",
+    "      initial={{ opacity: 0 }}",
+    "      animate={{ scale: 1.1 }}",
+    "      className='p-8 bg-red-600'",
+    "    >",
+    "      <h1>AI UI Core</h1>",
+    "    </motion.div>",
+    "  );",
+    "};"
+  ]},
+  { filename: "core.py", code: [
+    "class AIProject:",
+    "    def __init__(self, name):",
+    "        self.name = name",
+    "        self.engine = 'GPT-OS'",
+    "",
+    "    async def run(self):",
+    "        await self.load_assets()",
+    "        print(f'Starting {self.name}')",
+    "        return self.engine.execute()",
+    "",
+    "project = AIProject('ErPyCode')",
+    "project.run()"
+  ]},
+  { filename: "landing.html", code: [
+    "<section class='hero'>",
+    "  <div class='container'>",
+    "    <h1 id='title'>Hello World</h1>",
+    "    <p>Custom design systems</p>",
+    "  </div>",
+    "</section>",
+    "",
+    "/* CSS Modules */",
+    ".hero {",
+    "  background: #000;",
+    "  color: #ff0000;",
+    "  display: grid;",
+    "}"
+  ]}
+];
+
+const TYPEWRITER_SETS = [
+  ["PYTHON","LOGIC","DEPLOY"],
+  ["IMPORT","AUTOMATE","RUN"],
+  ["DEFINE","OPTIMIZE","SCALE"],
+  ["ANALYZE","BUILD","SOLVE"],
+  ["CODE","CREATE","REPEAT"]
+];
+
+const ENTRANCE_STEPS = [
+  "INITIALIZING_QUANTUM_CORE...",
+  "ESTABLISHING_ENCRYPTED_LINK...",
+  "BYPASSING_FIREWALLS...",
+  "DECODING_PORTFOLIO_ASSETS...",
+  "SYSTEM_READY"
+];
+
+// ════════════════════════════════════════════════
+// ENTRANCE SEQUENCE
+// ════════════════════════════════════════════════
+(function runEntrance() {
+  // Build step elements
+  const stepsEl = document.getElementById('entrance-steps');
+  ENTRANCE_STEPS.forEach((text, i) => {
+    const div = document.createElement('div');
+    div.className = 'entrance-step';
+    div.id = 'es-' + i;
+    div.innerHTML = `<div class="entrance-dot"></div><span>${text}</span>`;
+    stepsEl.appendChild(div);
+  });
+
+  let step = 0;
+  const fillEl = document.getElementById('entrance-fill');
+  const grantedEl = document.getElementById('entrance-granted');
+
+  function advance() {
+    if (step < ENTRANCE_STEPS.length) {
+      // Mark previous done
+      if (step > 0) {
+        const prev = document.getElementById('es-' + (step-1));
+        prev.classList.remove('active');
+        prev.classList.add('visible','done');
+      }
+      const cur = document.getElementById('es-' + step);
+      cur.classList.add('visible','active');
+      fillEl.style.width = ((step + 1) / ENTRANCE_STEPS.length * 100) + '%';
+      step++;
+      setTimeout(advance, 620);
+    } else {
+      // Done - show granted
+      setTimeout(() => {
+        grantedEl.classList.add('show');
+        setTimeout(() => {
+          document.getElementById('entrance').classList.add('exit');
+          setTimeout(() => {
+            document.getElementById('entrance').classList.add('gone');
+            grantedEl.style.display = 'none';
+            startMainContent();
+          }, 800);
+        }, 700);
+      }, 300);
+    }
+  }
+
+  setTimeout(advance, 400);
+})();
+
+// ════════════════════════════════════════════════
+// MAIN CONTENT INIT
+// ════════════════════════════════════════════════
+function startMainContent() {
+  const main = document.getElementById('main');
+  main.classList.add('visible');
+  buildProjects();
+  buildMatrix();
+  startTypewriter();
+  startTerminal();
+  initScrollReveal();
+  initMobileNav();
+  initModal();
+}
+
+// ════════════════════════════════════════════════
+// PROJECTS
+// ════════════════════════════════════════════════
+const CATEGORIES = [
+  { key: "all",    label: "همه" },
+  { key: "python", label: "پایتون" },
+  { key: "web",    label: "وب" },
+  { key: "network",label: "شبکه" },
+  { key: "learn",  label: "آموزش" }
+];
+
+// assign category to each project
+PROJECTS.forEach(p => {
+  const t = p.tech.map(x => x.toLowerCase()).join(' ');
+  if (t.includes('git') || t.includes('tutorial'))  p.cat = 'learn';
+  else if (t.includes('python'))                    p.cat = 'python';
+  else if (t.includes('react') || t.includes('html') || t.includes('glassmorphism') || t.includes('browser')) p.cat = 'web';
+  else p.cat = 'network';
+});
+
+let activeFilter = 'all';
+let visibleCount = 6;
+
+function buildProjects() {
+  buildFilters();
+  renderProjects();
+}
+
+function buildFilters() {
+  const row = document.getElementById('filter-row');
+  CATEGORIES.forEach(c => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-tab' + (c.key === 'all' ? ' active' : '');
+    btn.textContent = c.label;
+    btn.dataset.cat = c.key;
+    btn.addEventListener('click', () => {
+      activeFilter = c.key;
+      visibleCount = 6;
+      document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderProjects();
+    });
+    row.appendChild(btn);
+  });
+}
+
+function getFilteredProjects() {
+  if (activeFilter === 'all') return PROJECTS.map((p,i) => ({...p, _idx: i}));
+  return PROJECTS.map((p,i) => ({...p, _idx: i})).filter(p => p.cat === activeFilter);
+}
+
+function renderProjects() {
+  const grid = document.getElementById('projects-grid');
+  grid.innerHTML = '';
+  const filtered = getFilteredProjects();
+  const toShow = filtered.slice(0, visibleCount);
+
+  toShow.forEach((p, i) => {
+    const card = document.createElement('div');
+    card.className = 'project-card';
+    card.innerHTML = `
+      <div class="project-thumb" style="background:${p.gradient}">
+        <div class="project-thumb-overlay"></div>
+        <div class="project-thumb-icon">${p.iconSvg}</div>
+      </div>
+      <h3 class="project-title">${p.title}</h3>
+      <p class="project-desc">${p.desc}</p>
+      <div class="project-tags">${p.tech.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+      <div class="project-footer">
+        <span class="ai-badge">AI-AUGMENTED WORKFLOW</span>
+      </div>`;
+    card.addEventListener('click', () => openModal(p._idx));
+    grid.appendChild(card);
+    // stagger animation
+    setTimeout(() => card.classList.add('visible'), 80 * i);
+  });
+
+  // toggle load-more button
+  const btn = document.getElementById('load-more-btn');
+  if (filtered.length > visibleCount) {
+    btn.classList.remove('hidden');
+    btn.querySelector('span').textContent = `پروژه‌های بیشتر (${filtered.length - visibleCount})`;
+  } else {
+    btn.classList.add('hidden');
+  }
+}
+
+function loadMoreProjects() {
+  visibleCount += 4;
+  renderProjects();
+}
+
+// ════════════════════════════════════════════════
+// MODAL
+// ════════════════════════════════════════════════
+let modalOpen = false;
+
+function openModal(idx) {
+  const p = PROJECTS[idx];
+  const body = document.getElementById('modal-body');
+  body.innerHTML = `
+    <div class="modal-icon" style="background:${p.gradient}">${p.iconSvg}</div>
+    <h3 class="modal-title">${p.title}</h3>
+    <div class="modal-tags">${p.tech.map(t=>`<span class="modal-tag">${t}</span>`).join('')}</div>
+    <div class="modal-desc">${p.longDesc}</div>
+    <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:2rem;">
+      ${p.demo ? `<a href="${p.demo}" target="_blank" rel="noopener" class="btn-primary" style="flex:1;min-width:140px;justify-content:center;">
+        <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="18" height="18"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        مشاهده دمو
+      </a>` : ''}
+      ${p.github ? `<a href="${p.github}" target="_blank" rel="noopener" class="btn-ghost" style="flex:1;min-width:140px;justify-content:center;border-color:rgba(255,255,255,.1);">
+        <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="18" height="18"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        گیتهاب
+      </a>` : ''}
+    </div>`;
+  document.getElementById('modal-backdrop').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  modalOpen = true;
+}
+
+function closeModal(e) {
+  if (e && e.target !== document.getElementById('modal-backdrop') && e.currentTarget !== document.getElementById('modal-backdrop')) return;
+  document.getElementById('modal-backdrop').classList.remove('open');
+  document.body.style.overflow = '';
+  modalOpen = false;
+}
+
+function initModal() {
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && modalOpen) { document.getElementById('modal-backdrop').classList.remove('open'); document.body.style.overflow=''; modalOpen=false; }});
+  // Fix close button
+  document.querySelector('.modal-dot.red').addEventListener('click', () => { document.getElementById('modal-backdrop').classList.remove('open'); document.body.style.overflow=''; modalOpen=false; });
+}
+
+// ════════════════════════════════════════════════
+// MATRIX OVERLAY
+// ════════════════════════════════════════════════
+function buildMatrix() {
+  const cols = document.getElementById('matrix-cols');
+  for (let i = 0; i < 22; i++) {
+    const col = document.createElement('div');
+    col.className = 'matrix-col';
+    let text = '';
+    for (let j = 0; j < 50; j++) {
+      text += String.fromCharCode(0x30A0 + Math.floor(Math.random() * 96));
+    }
+    col.textContent = text;
+    const dur = (Math.random() * 3 + 2).toFixed(1);
+    const delay = (Math.random() * 2).toFixed(1);
+    col.style.animation = `matrixFall ${dur}s linear ${delay}s infinite`;
+    cols.appendChild(col);
+  }
+}
+
+let matrixTimer = null;
+function triggerMatrix() {
+  const overlay = document.getElementById('matrix-overlay');
+  overlay.classList.add('show');
+  if (matrixTimer) clearTimeout(matrixTimer);
+  matrixTimer = setTimeout(() => overlay.classList.remove('show'), 3000);
+}
+
+// ════════════════════════════════════════════════
+// TYPEWRITER HEADER
+// ════════════════════════════════════════════════
+function startTypewriter() {
+  const l1 = document.getElementById('tw-l1');
+  const l2 = document.getElementById('tw-l2');
+  const l3 = document.getElementById('tw-l3');
+  const lines = [l1, l2, l3];
+
+  let setIdx = 0, wordPart = 0, charIdx = 0, isDeleting = false;
+  let words = ["","",""];
+
+  function tick() {
+    const set = TYPEWRITER_SETS[setIdx];
+    if (!isDeleting) {
+      const target = set[wordPart];
+      if (charIdx < target.length) {
+        words[wordPart] = target.slice(0, charIdx + 1);
+        lines[wordPart].textContent = words[wordPart];
+        charIdx++;
+        setTimeout(tick, 100);
+      } else {
+        if (wordPart < 2) {
+          wordPart++;
+          charIdx = 0;
+          setTimeout(tick, 200);
+        } else {
+          setTimeout(() => { isDeleting = true; tick(); }, 2500);
+        }
+      }
+    } else {
+      const allEmpty = words.every(w => w.length === 0);
+      if (allEmpty) {
+        isDeleting = false;
+        setIdx = (setIdx + 1) % TYPEWRITER_SETS.length;
+        wordPart = 0; charIdx = 0;
+        setTimeout(tick, 100);
+      } else {
+        words = words.map(w => w.slice(0, -1));
+        lines.forEach((l, i) => l.textContent = words[i]);
+        setTimeout(tick, 50);
+      }
+    }
+  }
+  tick();
+}
+
+// ════════════════════════════════════════════════
+// TERMINAL
+// ════════════════════════════════════════════════
+function startTerminal() {
+  const bodyEl = document.getElementById('terminal-body');
+  const filenameEl = document.getElementById('terminal-filename');
+  const posEl = document.getElementById('terminal-pos');
+
+  let blockIdx = 0, lineIdx = 0, charIdx = 0, isDeleting = false;
+  let renderedLines = [];
+
+  function renderLines() {
+    bodyEl.innerHTML = renderedLines.map((text, i) => `
+      <div class="terminal-line">
+        <span class="terminal-ln">${i+1}</span>
+        <span class="terminal-code${i === renderedLines.length - 1 && !isDeleting ? ' active' : ''}">
+          ${escHtml(text)}${i === renderedLines.length - 1 && !isDeleting ? '<span class="cursor"></span>' : ''}
+        </span>
+      </div>`).join('');
+    posEl.textContent = `LN ${lineIdx+1} : COL ${charIdx+1}`;
+  }
+
+  function escHtml(s) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function tick() {
+    const block = CODE_BLOCKS[blockIdx];
+    if (!isDeleting) {
+      if (lineIdx < block.code.length) {
+        const target = block.code[lineIdx];
+        if (charIdx < target.length) {
+          if (!renderedLines[lineIdx]) renderedLines[lineIdx] = '';
+          renderedLines[lineIdx] += target[charIdx];
+          charIdx++;
+          renderLines();
+          setTimeout(tick, 55);
+        } else {
+          if (lineIdx < block.code.length - 1) {
+            lineIdx++;
+            renderedLines.push('');
+            charIdx = 0;
+            setTimeout(tick, 40);
+          } else {
+            setTimeout(() => { isDeleting = true; tick(); }, 1000);
+          }
+        }
+      }
+    } else {
+      if (renderedLines.length > 0) {
+        const last = renderedLines[renderedLines.length - 1];
+        if (last && last.length > 0) {
+          renderedLines[renderedLines.length - 1] = last.slice(0, -3);
+        } else {
+          renderedLines.pop();
+          lineIdx = Math.max(0, lineIdx - 1);
+        }
+        renderLines();
+        setTimeout(tick, 12);
+      } else {
+        isDeleting = false;
+        let next;
+        do { next = Math.floor(Math.random() * CODE_BLOCKS.length); } while (next === blockIdx);
+        blockIdx = next;
+        lineIdx = 0; charIdx = 0; renderedLines = [];
+        filenameEl.textContent = CODE_BLOCKS[blockIdx].filename;
+        setTimeout(tick, 100);
+      }
+    }
+  }
+  tick();
+}
+
+// ════════════════════════════════════════════════
+// SCROLL REVEAL
+// ════════════════════════════════════════════════
+function initScrollReveal() {
+  const targets = document.querySelectorAll('section, footer');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('revealed'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  targets.forEach(t => observer.observe(t));
+}
+
+// ════════════════════════════════════════════════
+// MOBILE NAV
+// ════════════════════════════════════════════════
+function initMobileNav() {
+  setTimeout(() => document.getElementById('mobile-nav').classList.add('visible'), 1000);
+
+  // Floating back-to-top button
+  const btt = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) btt.classList.add('show');
+    else btt.classList.remove('show');
+  });
+}
+</script>
+</body>
+</html>
