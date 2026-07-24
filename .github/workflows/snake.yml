@@ -14,7 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: output
           fetch-depth: 0
 
       - uses: Platane/snk/svg-only@v3
@@ -24,19 +23,12 @@ jobs:
             dist/github-snake-dark.svg
             dist/github-snake-light.svg?color_snake=gray&color_dots=#DC2626,#dc2626,#880808,#550000
 
-      - name: Copy SVGs to root
-        run: |
-          mkdir -p dist
-          cp dist/github-snake-*.svg . 2>/dev/null || true
-
-      - name: Commit and push
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
-          if git diff --cached --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "Update snake animation"
-            git push
-          fi
+      - name: Push to output branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: output
+          publish_dir: dist
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
