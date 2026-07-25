@@ -117,15 +117,6 @@
 
 <div align="center">
 
-<a href="https://github.com/erpycode">
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=erpycode&show_icons=true&theme=chartreuse-dark&hide_border=true&bg_color=0d1117&title_color=DC2626&icon_color=DC2626&text_color=c9d1d9&ring_color=DC2626&include_all_commits=true&count_private=true" />
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=erpycode&layout=compact&theme=chartreuse-dark&hide_border=true&bg_color=0d1117&title_color=DC2626&text_color=c9d1d9&langs_count=8" />
-</a>
-
-</div>
-
-<div align="center">
-
 [![GitHub Streak](https://streak-stats.demolab.com?user=erpycode&theme=dark&background=0d1117&ring=DC2626&fire=DC2626&currStreakLabel=DC2626&sideLabels=c9d1d9&currStreakNum=c9d1d9&sideNums=c9d1d9&dates=555555&border=30363d)](https://git.io/streak-stats)
 
 </div>
