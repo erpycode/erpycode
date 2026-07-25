@@ -125,9 +125,11 @@
 
 ## 🐍 `python snake.py`
 
+> 🎮 Watch me eat my contributions!
+
 <div align="center">
 
-![Snake animation](https://raw.githubusercontent.com/erpycode/erpycode/output/github-snake-dark.svg)
+<img src="https://raw.githubusercontent.com/erpycode/erpycode/output/github-snake-dark.svg" width="100%" />
 
 </div>
 
