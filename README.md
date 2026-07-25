@@ -1,13 +1,15 @@
 <div align="center">
 
-```
-    ______     ____        ______          __   
-   / ____/____/ __ \__  __/ ____/___  ____/ /__ 
-  / __/ / ___/ /_/ / / / / /   / __ \/ __  / _ \
- / /___/ /  / ____/ /_/ / /___/ /_/ / /_/ /  __/
-/_____/_/  /_/    \__, /\____/\____/\__,_/\___/ 
-                 /____/                         
-```
+ ```
+ ______      _____        _____          _      
+|  ____|    |  __ \      / ____|        | |     
+| |__   _ __| |__) |   _| |     ___   __| | ___ 
+|  __| | '__|  ___/ | | | |    / _ \ / _` |/ _ \
+| |____| |  | |   | |_| | |___| (_) | (_| |  __/
+|______|_|  |_|    \__, |\_____\___/ \__,_|\___|
+                    __/ |                       
+                   |___/                        
+ ```
 
 ### `python erpy.py`
 
@@ -37,7 +39,7 @@
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+
 ![Cloudflare Workers](https://img.shields.io/badge/Cloudflare_Workers-F48120?style=for-the-badge&logo=cloudflare&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
@@ -157,12 +159,15 @@
 
 ---
 
-## 🏆 `cat achievements.md`
+## 🏆 `cat trophies.md`
 
 <div align="center">
 
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=erpycode&layout=compact&theme=chartreuse-dark&hide_border=true&bg_color=0d1117&title_color=DC2626&text_color=c9d1d9&langs_count=8)](https://github.com/erpycode)
+![Stars](https://img.shields.io/badge/⭐_Total_Stars-51-DC2626?style=for-the-badge&labelColor=0d1117)
+![Repos](https://img.shields.io/badge/📦_Repositories-11-DC2626?style=for-the-badge&labelColor=0d1117)
+![Followers](https://img.shields.io/badge/👥_Followers-31-DC2626?style=for-the-badge&labelColor=0d1117)
 
+> ⭐ **Starstruck** · 🦈 **Pull Shark** · 🔥 **Keep Building!**
 </div>
 
 ---
