@@ -182,6 +182,4 @@
 ╚══════════════════════════════════════════════════════════════╝
 ```
 
-[![Profile Views](https://komarev.com/ghpvc/?username=erpycode&color=DC2626&style=for-the-badge&label=Profile+Views)](https://github.com/erpycode)
-
 </div>
