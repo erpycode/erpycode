@@ -51,7 +51,7 @@
 ### 🛠️ [nahan-installer](https://github.com/erpycode/nahan-installer)
 > Automated Nahan gateway installer for Cloudflare Workers
 
-`⭐ 53` · `🍴 11` · ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![JS](https://img.shields.io/badge/JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+`⭐ 54` · `🍴 11` · ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![JS](https://img.shields.io/badge/JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
 [🔗 Live Demo](https://erpycode.github.io/nahan-installer/)
 
@@ -149,7 +149,7 @@
 
 <div align="center">
 
-![Stars](https://img.shields.io/badge/⭐_Total_Stars-77-DC2626?style=for-the-badge&labelColor=0d1117)
+![Stars](https://img.shields.io/badge/⭐_Total_Stars-78-DC2626?style=for-the-badge&labelColor=0d1117)
 ![Repos](https://img.shields.io/badge/📦_Repositories-12-DC2626?style=for-the-badge&labelColor=0d1117)
 ![Followers](https://img.shields.io/badge/👥_Followers-38-DC2626?style=for-the-badge&labelColor=0d1117)
 
