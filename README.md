@@ -11,7 +11,7 @@
 
 ### `python erpy.py`
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=DC2626&center=true&vCenter=true&multiline=true&repeat=true&width=600&height=100&lines=Building+Cool+Things+with+Python+%F0%9F%90%8D;Cloudflare+Workers+Enthusiast+%E2%9A%A1;Turning+Ideas+into+Code+%F0%9F%92%BB;Always+Learning%2C+Always+Building+%F0%9F%9A%80)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=DC2626&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=120&lines=Building+Cool+Things+with+Python+%F0%9F%90%8D;Cloudflare+Workers+Enthusiast+%E2%9A%A1;Turning+Ideas+into+Code+%F0%9F%92%BB;Always+Learning%2C+Always+Building+%F0%9F%9A%80)](https://git.io/typing-svg)
 
 [![Portfolio](https://img.shields.io/badge/🌐_Portfolio-erpycode.github.io-DC2626?style=for-the-badge&logo=github&logoColor=white)](https://erpycode.github.io/erpycode/)
 [![GitHub](https://img.shields.io/badge/⭐_GitHub-erpycode-DC2626?style=for-the-badge&logo=github&logoColor=white)](https://github.com/erpycode)
@@ -61,7 +61,7 @@
 ### 🛠️ [nahan-installer](https://github.com/erpycode/nahan-installer)
 > Automated Nahan gateway installer for Cloudflare Workers
 
-`⭐ 48` · `🍴 10` · `Shell`
+`⭐ 51` · `🍴 11` · `Shell`
 
 [🔗 Live Demo](https://erpycode.github.io/nahan-installer/)
 
@@ -83,7 +83,7 @@
 ### 🔍 [ip-extractor](https://github.com/erpycode/ip-extractor)
 > Extract, clean, filter IP addresses from scanner outputs in browser
 
-`⭐ 6` · `HTML, JS`
+`⭐ 6` · `🍴 1` · `HTML, JS`
 
 </td>
 <td width="50%">
@@ -91,7 +91,7 @@
 ### 🌐 [nahan](https://github.com/erpycode/nahan)
 > Secure network gateway on Cloudflare Workers
 
-`⭐ 2` · `HTML`
+`⭐ 2` · `🍴 3` · `HTML`
 
 </td>
 </tr>
@@ -101,7 +101,7 @@
 ### 🔐 [Password_Generator](https://github.com/erpycode/Password_Generator)
 > Secure Python password generator with clipboard and file save
 
-`⭐ 2` · `Python`
+`⭐ 2` · `🍴 0` · `Python`
 
 </td>
 <td width="50%">
@@ -109,7 +109,7 @@
 ### 💇 [StyleFlow-Barbershop](https://github.com/erpycode/StyleFlow-Barbershop)
 > Full-stack barbershop appointment app with AI assistant
 
-`⭐ 2` · `React, TypeScript, Gemini AI`
+`⭐ 2` · `🍴 1` · `React, TypeScript, Gemini AI`
 
 </td>
 </tr>
@@ -162,11 +162,11 @@
 
 ---
 
-## 🏆 `cat trophies.md`
+## 🏆 `cat achievements.md`
 
 <div align="center">
 
-[![trophy](https://github-profile-trophy.vercel.app/?username=erpycode&theme=darkhub&no-frame=true&no-bg=true&column=7&margin-w=10&row=1&column-gap=15&bg_color=0d1117&title_color=DC2626)](https://github.com/ryo-ma/github-profile-trophy)
+[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=erpycode&layout=compact&theme=chartreuse-dark&hide_border=true&bg_color=0d1117&title_color=DC2626&text_color=c9d1d9&langs_count=8)](https://github.com/erpycode)
 
 </div>
 
@@ -196,6 +196,6 @@
 ╚══════════════════════════════════════════════════════════════╝
 ```
 
-![Visitors](https://api.visitorbadge.io/v1/pageviews/erpycode/erpycode?label=Profile%20Views&countColor=DC2626&style=for-the-badge)
+[![Profile Views](https://komarev.com/ghpvc/?username=erpycode&color=DC2626&style=for-the-badge&label=Profile+Views)](https://github.com/erpycode)
 
 </div>
