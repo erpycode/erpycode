@@ -129,7 +129,7 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/erpycode/erpycode/output/github-snake-dark.svg" width="100%" />
+<img src="https://raw.githubusercontent.com/erpycode/erpycode/output/github-snake-dark.svg" width="100%" style="border: 2px solid #DC2626; border-radius: 8px;" />
 
 </div>
 
