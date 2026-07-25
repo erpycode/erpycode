@@ -51,7 +51,7 @@
 ### 🛠️ [nahan-installer](https://github.com/erpycode/nahan-installer)
 > Automated Nahan gateway installer for Cloudflare Workers
 
-`⭐ 51` · `🍴 11` · `Shell`
+`⭐ 3` · `🍴 3` · `Shell
 
 [🔗 Live Demo](https://erpycode.github.io/nahan-installer/)
 
@@ -61,7 +61,7 @@
 ### ⚡ [cloudflare-request-calc](https://github.com/erpycode/cloudflare-request-calc)
 > Fast, lightweight Cloudflare traffic calculator with glassmorphism UI
 
-`⭐ 8` · `🍴 1` · `HTML, CSS, JS`
+`⭐ 8` · `🍴 1` · `HTML, CSS, JS
 
 [🔗 Live Demo](https://erpycode.github.io/cloudflare-request-calc)
 
@@ -73,7 +73,7 @@
 ### 🔍 [ip-extractor](https://github.com/erpycode/ip-extractor)
 > Extract, clean, filter IP addresses from scanner outputs in browser
 
-`⭐ 6` · `🍴 1` · `HTML, JS`
+`⭐ 7` · `🍴 1` · `HTML, JS
 
 </td>
 <td width="50%">
@@ -91,7 +91,7 @@
 ### 🔐 [Password_Generator](https://github.com/erpycode/Password_Generator)
 > Secure Python password generator with clipboard and file save
 
-`⭐ 2` · `🍴 0` · `Python`
+`⭐ 2` · `🍴 0` · `Python
 
 </td>
 <td width="50%">
@@ -99,7 +99,7 @@
 ### 💇 [StyleFlow-Barbershop](https://github.com/erpycode/StyleFlow-Barbershop)
 > Full-stack barbershop appointment app with AI assistant
 
-`⭐ 2` · `🍴 1` · `React, TypeScript, Gemini AI`
+`⭐ 3` · `🍴 1` · `React, TypeScript, Gemini AI
 
 </td>
 </tr>
@@ -149,9 +149,9 @@
 
 <div align="center">
 
-![Stars](https://img.shields.io/badge/⭐_Total_Stars-72-DC2626?style=for-the-badge&labelColor=0d1117)
-![Repos](https://img.shields.io/badge/📦_Repositories-11-DC2626?style=for-the-badge&labelColor=0d1117)
-![Followers](https://img.shields.io/badge/👥_Followers-31-DC2626?style=for-the-badge&labelColor=0d1117)
+![Stars](https://img.shields.io/badge/⭐_Total_Stars-77-DC2626?style=for-the-badge&labelColor=0d1117)
+![Repos](https://img.shields.io/badge/📦_Repositories-12-DC2626?style=for-the-badge&labelColor=0d1117)
+![Followers](https://img.shields.io/badge/👥_Followers-38-DC2626?style=for-the-badge&labelColor=0d1117)
 
 > ⭐ **Starstruck** · 🦈 **Pull Shark** · 🔥 **Keep Building!**
 </div>
