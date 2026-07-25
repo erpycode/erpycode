@@ -51,7 +51,7 @@
 ### 🛠️ [nahan-installer](https://github.com/erpycode/nahan-installer)
 > Automated Nahan gateway installer for Cloudflare Workers
 
-`⭐ 53` · `🍴 11` · `Shell`
+`⭐ 53` · `🍴 11` · ![Shell](https://img.shields.io/badge/Shell-4EAA25?style=flat-square&logo=gnubash&logoColor=white)
 
 [🔗 Live Demo](https://erpycode.github.io/nahan-installer/)
 
@@ -61,7 +61,7 @@
 ### ⚡ [cloudflare-request-calc](https://github.com/erpycode/cloudflare-request-calc)
 > Fast, lightweight Cloudflare traffic calculator with glassmorphism UI
 
-`⭐ 8` · `🍴 1` · `HTML, CSS, JS`
+`⭐ 8` · `🍴 1` · ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) ![JS](https://img.shields.io/badge/JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
 [🔗 Live Demo](https://erpycode.github.io/cloudflare-request-calc)
 
@@ -73,7 +73,7 @@
 ### 🔍 [ip-extractor](https://github.com/erpycode/ip-extractor)
 > Extract, clean, filter IP addresses from scanner outputs in browser
 
-`⭐ 7` · `🍴 1` · `HTML, JS`
+`⭐ 7` · `🍴 1` · ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![JS](https://img.shields.io/badge/JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
 </td>
 <td width="50%">
@@ -81,7 +81,7 @@
 ### 🌐 [nahan](https://github.com/erpycode/nahan)
 > Secure network gateway on Cloudflare Workers
 
-`⭐ 3` · `🍴 3` · `HTML`
+`⭐ 3` · `🍴 3` · ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 
 </td>
 </tr>
@@ -91,7 +91,7 @@
 ### 🔐 [Password_Generator](https://github.com/erpycode/Password_Generator)
 > Secure Python password generator with clipboard and file save
 
-`⭐ 2` · `🍴 0` · `Python`
+`⭐ 2` · `🍴 0` · ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 
 </td>
 <td width="50%">
@@ -99,7 +99,7 @@
 ### 💇 [StyleFlow-Barbershop](https://github.com/erpycode/StyleFlow-Barbershop)
 > Full-stack barbershop appointment app with AI assistant
 
-`⭐ 3` · `🍴 1` · `React, TypeScript, Gemini AI`
+`⭐ 3` · `🍴 1` · ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white) ![Gemini](https://img.shields.io/badge/Gemini_AI-4285F4?style=flat-square&logo=google&logoColor=white)
 
 </td>
 </tr>
