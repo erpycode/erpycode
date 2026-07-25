@@ -61,7 +61,7 @@
 ### ⚡ [cloudflare-request-calc](https://github.com/erpycode/cloudflare-request-calc)
 > Fast, lightweight Cloudflare traffic calculator with glassmorphism UI
 
-`⭐ 8` · `🍴 1` · `HTML, CSS, JS
+`⭐ 8` · `🍴 1` · `HTML, CSS, JS`
 
 [🔗 Live Demo](https://erpycode.github.io/cloudflare-request-calc)
 
@@ -73,7 +73,7 @@
 ### 🔍 [ip-extractor](https://github.com/erpycode/ip-extractor)
 > Extract, clean, filter IP addresses from scanner outputs in browser
 
-`⭐ 7` · `🍴 1` · `HTML, JS
+`⭐ 7` · `🍴 1` · `HTML, JS`
 
 </td>
 <td width="50%">
@@ -91,7 +91,7 @@
 ### 🔐 [Password_Generator](https://github.com/erpycode/Password_Generator)
 > Secure Python password generator with clipboard and file save
 
-`⭐ 2` · `🍴 0` · `Python
+`⭐ 2` · `🍴 0` · `Python`
 
 </td>
 <td width="50%">
@@ -99,7 +99,7 @@
 ### 💇 [StyleFlow-Barbershop](https://github.com/erpycode/StyleFlow-Barbershop)
 > Full-stack barbershop appointment app with AI assistant
 
-`⭐ 3` · `🍴 1` · `React, TypeScript, Gemini AI
+`⭐ 3` · `🍴 1` · `React, TypeScript, Gemini AI`
 
 </td>
 </tr>
