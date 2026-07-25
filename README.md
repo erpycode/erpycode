@@ -162,10 +162,10 @@
 
 <div align="center">
 
-[![Telegram Channel](https://img.shields.io/badge/📢_Channel-erpycodes-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/erpycodes)
-[![Telegram](https://img.shields.io/badge/💬_Telegram-erpycode-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/erpycode)
-[![X (Twitter)](https://img.shields.io/badge/X-erpycode-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/erpycode)
-[![GitHub](https://img.shields.io/badge/GitHub-erpycode-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/erpycode)
+[![Telegram Channel](https://img.shields.io/badge/📢_Channel-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/erpycodes)
+[![Telegram](https://img.shields.io/badge/💬_Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/erpycode)
+[![X (Twitter)](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/erpycode)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/erpycode)
 
 </div>
 
