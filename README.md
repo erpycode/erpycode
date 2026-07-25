@@ -13,7 +13,7 @@
 
 ### `python erpy.py`
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=DC2626&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=120&lines=Building+Cool+Things+with+Python+%F0%9F%90%8D;Cloudflare+Workers+Enthusiast+%E2%9A%A1;Turning+Ideas+into+Code+%F0%9F%92%BB;Always+Learning%2C+Always+Building+%F0%9F%9A%80)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=400&color=DC2626&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=120&lines=Building+Cool+Things+with+Python+%F0%9F%90%8D;Cloudflare+Workers+Enthusiast+%E2%9A%A1;Turning+Ideas+into+Code+%F0%9F%92%BB;Always+Learning%2C+Always+Building+%F0%9F%9A%80)](https://git.io/typing-svg)
 
 [![Portfolio](https://img.shields.io/badge/🌐_Portfolio-erpycode.github.io-DC2626?style=for-the-badge&logo=github&logoColor=white)](https://erpycode.github.io/erpycode/)
 [![GitHub](https://img.shields.io/badge/⭐_GitHub-erpycode-DC2626?style=for-the-badge&logo=github&logoColor=white)](https://github.com/erpycode)
