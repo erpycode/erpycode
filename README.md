@@ -1,18 +1,21 @@
 <div align="center">
-<br>
 
-![Banner](https://img.shields.io/badge/⚡_ErPyCode-DC2626?style=for-the-badge&labelColor=0d1117&logo=python&logoColor=white&fontSize=3em)
+```
+    ______     ____        ______          __   
+   / ____/____/ __ \__  __/ ____/___  ____/ /__ 
+  / __/ / ___/ /_/ / / / / /   / __ \/ __  / _ \
+ / /___/ /  / ____/ /_/ / /___/ /_/ / /_/ /  __/
+/_____/_/  /_/    \__, /\____/\____/\__,_/\___/ 
+                 /____/                         
+```
 
-#### `Building with Code ⚡`
-
-────────────────────────────────────────────────────
+### `python erpy.py`
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=DC2626&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=120&lines=Building+Cool+Things+with+Python+%F0%9F%90%8D;Cloudflare+Workers+Enthusiast+%E2%9A%A1;Turning+Ideas+into+Code+%F0%9F%92%BB;Always+Learning%2C+Always+Building+%F0%9F%9A%80)](https://git.io/typing-svg)
 
 [![Portfolio](https://img.shields.io/badge/🌐_Portfolio-erpycode.github.io-DC2626?style=for-the-badge&logo=github&logoColor=white)](https://erpycode.github.io/erpycode/)
 [![GitHub](https://img.shields.io/badge/⭐_GitHub-erpycode-DC2626?style=for-the-badge&logo=github&logoColor=white)](https://github.com/erpycode)
 
-────────────────────────────────────────────────────
 </div>
 
 ---
