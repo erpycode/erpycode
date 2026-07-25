@@ -129,7 +129,13 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/erpycode/erpycode/output/github-snake-dark.svg" width="100%" style="border: 2px solid #DC2626; border-radius: 8px;" />
+<table align="center" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-color: #DC2626; border-radius: 8px; overflow: hidden;">
+<tr>
+<td style="padding: 4px; border-color: #DC2626;">
+<img src="https://raw.githubusercontent.com/erpycode/erpycode/output/github-snake-dark.svg" width="100%" />
+</td>
+</tr>
+</table>
 
 </div>
 
