@@ -51,7 +51,7 @@
 ### 🛠️ [nahan-installer](https://github.com/erpycode/nahan-installer)
 > Automated Nahan gateway installer for Cloudflare Workers
 
-`⭐ 63` · `🍴 16` · ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![JS](https://img.shields.io/badge/JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+`⭐ 63` · `🍴 17` · ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![JS](https://img.shields.io/badge/JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
 [🔗 Live Demo](https://erpycode.github.io/nahan-installer/)
 
@@ -73,7 +73,7 @@
 ### 🔍 [ip-extractor](https://github.com/erpycode/ip-extractor)
 > Extract, clean, filter IP addresses from scanner outputs in browser
 
-`⭐ 9` · `🍴 2` · ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![JS](https://img.shields.io/badge/JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+`⭐ 9` · `🍴 3` · ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![JS](https://img.shields.io/badge/JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
 </td>
 <td width="50%">
@@ -149,7 +149,7 @@
 
 <div align="center">
 
-![Stars](https://img.shields.io/badge/⭐_Total_Stars-114-DC2626?style=for-the-badge&labelColor=0d1117)
+![Stars](https://img.shields.io/badge/⭐_Total_Stars-115-DC2626?style=for-the-badge&labelColor=0d1117)
 ![Repos](https://img.shields.io/badge/📦_Repositories-14-DC2626?style=for-the-badge&labelColor=0d1117)
 ![Followers](https://img.shields.io/badge/👥_Followers-45-DC2626?style=for-the-badge&labelColor=0d1117)
 
