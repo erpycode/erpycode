@@ -51,7 +51,7 @@
 ### 🛠️ [nahan-installer](https://github.com/erpycode/nahan-installer)
 > Automated Nahan gateway installer for Cloudflare Workers
 
-`⭐ 63` · `🍴 18` · ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![JS](https://img.shields.io/badge/JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+`⭐ 57` · `🍴 14` · ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![JS](https://img.shields.io/badge/JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
 [🔗 Live Demo](https://erpycode.github.io/nahan-installer/)
 
@@ -61,7 +61,7 @@
 ### ⚡ [cloudflare-request-calc](https://github.com/erpycode/cloudflare-request-calc)
 > Fast, lightweight Cloudflare traffic calculator with glassmorphism UI
 
-`⭐ 9` · `🍴 1` · ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) ![JS](https://img.shields.io/badge/JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+`⭐ 9` · `🍴 0` · ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) ![JS](https://img.shields.io/badge/JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
 [🔗 Live Demo](https://erpycode.github.io/cloudflare-request-calc)
 
@@ -73,7 +73,7 @@
 ### 🔍 [ip-extractor](https://github.com/erpycode/ip-extractor)
 > Extract, clean, filter IP addresses from scanner outputs in browser
 
-`⭐ 9` · `🍴 2` · ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![JS](https://img.shields.io/badge/JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+`⭐ 6` · `🍴 0` · ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![JS](https://img.shields.io/badge/JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
 </td>
 <td width="50%">
@@ -81,7 +81,7 @@
 ### 🌐 [nahan](https://github.com/erpycode/nahan)
 > Secure network gateway on Cloudflare Workers
 
-`⭐ 10` · `🍴 3` · ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+`⭐ 8` · `🍴 1` · ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 
 </td>
 </tr>
@@ -99,7 +99,7 @@
 ### 💇 [StyleFlow-Barbershop](https://github.com/erpycode/StyleFlow-Barbershop)
 > Full-stack barbershop appointment app with AI assistant
 
-`⭐ 4` · `🍴 1` · ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white) ![Gemini](https://img.shields.io/badge/Gemini_AI-4285F4?style=flat-square&logo=google&logoColor=white)
+`⭐ 3` · `🍴 1` · ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white) ![Gemini](https://img.shields.io/badge/Gemini_AI-4285F4?style=flat-square&logo=google&logoColor=white)
 
 </td>
 </tr>
@@ -149,9 +149,9 @@
 
 <div align="center">
 
-![Stars](https://img.shields.io/badge/⭐_Total_Stars-118-DC2626?style=for-the-badge&labelColor=0d1117)
+![Stars](https://img.shields.io/badge/⭐_Total_Stars-106-DC2626?style=for-the-badge&labelColor=0d1117)
 ![Repos](https://img.shields.io/badge/📦_Repositories-14-DC2626?style=for-the-badge&labelColor=0d1117)
-![Followers](https://img.shields.io/badge/👥_Followers-45-DC2626?style=for-the-badge&labelColor=0d1117)
+![Followers](https://img.shields.io/badge/👥_Followers-39-DC2626?style=for-the-badge&labelColor=0d1117)
 
 > ⭐ **Starstruck** · 🦈 **Pull Shark** · 🔥 **Keep Building!**
 </div>
