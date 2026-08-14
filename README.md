@@ -149,7 +149,7 @@
 
 <div align="center">
 
-![Stars](https://img.shields.io/badge/⭐_Total_Stars-105-DC2626?style=for-the-badge&labelColor=0d1117)
+![Stars](https://img.shields.io/badge/⭐_Total_Stars-106-DC2626?style=for-the-badge&labelColor=0d1117)
 ![Repos](https://img.shields.io/badge/📦_Repositories-14-DC2626?style=for-the-badge&labelColor=0d1117)
 ![Followers](https://img.shields.io/badge/👥_Followers-39-DC2626?style=for-the-badge&labelColor=0d1117)
 
