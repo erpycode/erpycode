@@ -61,7 +61,7 @@
 ### ⚡ [cloudflare-request-calc](https://github.com/erpycode/cloudflare-request-calc)
 > Fast, lightweight Cloudflare traffic calculator with glassmorphism UI
 
-`⭐ 9` · `🍴 0` · ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) ![JS](https://img.shields.io/badge/JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+`⭐ 8` · `🍴 0` · ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) ![JS](https://img.shields.io/badge/JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
 [🔗 Live Demo](https://erpycode.github.io/cloudflare-request-calc)
 
@@ -149,7 +149,7 @@
 
 <div align="center">
 
-![Stars](https://img.shields.io/badge/⭐_Total_Stars-159-DC2626?style=for-the-badge&labelColor=0d1117)
+![Stars](https://img.shields.io/badge/⭐_Total_Stars-158-DC2626?style=for-the-badge&labelColor=0d1117)
 ![Repos](https://img.shields.io/badge/📦_Repositories-16-DC2626?style=for-the-badge&labelColor=0d1117)
 ![Followers](https://img.shields.io/badge/👥_Followers-45-DC2626?style=for-the-badge&labelColor=0d1117)
 
