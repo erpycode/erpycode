@@ -151,7 +151,7 @@
 
 ![Stars](https://img.shields.io/badge/⭐_Total_Stars-168-DC2626?style=for-the-badge&labelColor=0d1117)
 ![Repos](https://img.shields.io/badge/📦_Repositories-16-DC2626?style=for-the-badge&labelColor=0d1117)
-![Followers](https://img.shields.io/badge/👥_Followers-50-DC2626?style=for-the-badge&labelColor=0d1117)
+![Followers](https://img.shields.io/badge/👥_Followers-51-DC2626?style=for-the-badge&labelColor=0d1117)
 
 > ⭐ **Starstruck** · 🦈 **Pull Shark** · 🔥 **Keep Building!**
 </div>
