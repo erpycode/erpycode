@@ -81,7 +81,7 @@
 ### 🌐 [nahan](https://github.com/erpycode/nahan)
 > Secure network gateway on Cloudflare Workers
 
-`⭐ 12` · `🍴 2` · ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+`⭐ 12` · `🍴 3` · ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 
 </td>
 </tr>
