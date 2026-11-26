@@ -99,7 +99,7 @@
 ### 💇 [StyleFlow-Barbershop](https://github.com/erpycode/StyleFlow-Barbershop)
 > Full-stack barbershop appointment app with AI assistant
 
-`⭐ 4` · `🍴 1` · ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white) ![Gemini](https://img.shields.io/badge/Gemini_AI-4285F4?style=flat-square&logo=google&logoColor=white)
+`⭐ 4` · `🍴 2` · ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white) ![Gemini](https://img.shields.io/badge/Gemini_AI-4285F4?style=flat-square&logo=google&logoColor=white)
 
 </td>
 </tr>
